@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ToGarden — ландшафтный дизайн, Москва и МО | Безматерных Юлия Юрьевна</title>
+<meta name="description" content="ToGarden — ландшафтный дизайн в Москве и Московской области. От идеи и проектирования до воплощения и совершенства. Ландшафтный архитектор Безматерных Юлия Юрьевна.">
+<meta name="theme-color" content="#2F4F3E">
+<meta property="og:title" content="ToGarden — ландшафтный дизайн, Москва и МО">
+<meta property="og:description" content="От идеи и проектирования до воплощения и совершенства.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.togarden.ru/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2064%2064'%3E%3Crect%20width='64'%20height='64'%20rx='14'%20fill='%232F4F3E'/%3E%3Cpath%20d='M32%2051c0-14%207.5-23%2019-26-1%2015-8.5%2023-19%2026z'%20fill='%23DCE8D6'/%3E%3Cpath%20d='M32%2051c0-14-7.5-23-19-26%201%2015%208.5%2023%2019%2026z'%20fill='%239FBC95'/%3E%3C/svg%3E">
+
+<style>
+  :root{
+    --bg:#F7F5F0;
+    --surface:#FFFFFF;
+    --ink:#2A2E2B;
+    --muted:#6E7671;
+    --green:#2F4F3E;
+    --green-soft:#E7EDE6;
+    --line:#E3DFD6;
+    --radius:14px;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+    --serif:ui-serif,Georgia,"Iowan Old Style","Palatino Linotype","Times New Roman",serif;
+    --wrap:1200px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  body.no-scroll{overflow:hidden}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  button{font:inherit}
+
+  .container{
+    width:100%;
+    max-width:var(--wrap);
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- HEADER ---------- */
+  .header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(247,245,240,.88);
+    -webkit-backdrop-filter:saturate(160%) blur(10px);
+    backdrop-filter:saturate(160%) blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+    min-height:58px;
+    padding:8px 24px;
+    max-width:var(--wrap);
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    flex-direction:column;
+    gap:1px;
+    text-decoration:none;
+    line-height:1.15;
+  }
+  .brand-name{
+    font-family:var(--serif);
+    font-size:1.2rem;
+    font-weight:600;
+    letter-spacing:.01em;
+    color:var(--green);
+  }
+  .brand-sub{
+    font-size:.71rem;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    gap:22px;
+  }
+  .nav a{
+    font-size:.87rem;
+    text-decoration:none;
+    color:var(--ink);
+    transition:color .18s ease;
+  }
+  .nav a:hover{color:var(--green)}
+  .nav a.mail{
+    padding:7px 15px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    background:var(--surface);
+    color:var(--green);
+    transition:border-color .18s ease,background .18s ease;
+  }
+  .nav a.mail:hover{border-color:var(--green);background:var(--green-soft)}
+
+  /* ---------- SECTIONS ---------- */
+  .section{padding:54px 0;scroll-margin-top:74px}
+  .section + .section{border-top:1px solid var(--line)}
+  .works{padding-top:38px}
+
+  .eyebrow{
+    margin:0 0 12px;
+    font-size:.74rem;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--green);
+    opacity:.85;
+  }
+  .h1{
+    margin:0 0 30px;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(1.45rem,3.1vw,2.35rem);
+    line-height:1.2;
+    letter-spacing:-.01em;
+    max-width:24ch;
+    color:var(--ink);
+  }
+  .h2{
+    margin:0 0 6px;
+    font-family:var(--serif);
+    font-weight:400;
+    font-size:clamp(1.3rem,2.4vw,1.85rem);
+    line-height:1.25;
+    color:var(--ink);
+  }
+
+  /* ---------- GALLERY ---------- */
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:14px;
+  }
+  .card{
+    position:relative;
+    display:block;
+    padding:0;
+    border:0;
+    margin:0;
+    aspect-ratio:16 / 9;
+    overflow:hidden;
+    border-radius:var(--radius);
+    background:#EAE6DE;
+    cursor:zoom-in;
+    transition:box-shadow .25s ease,transform .25s ease;
+  }
+  .card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s cubic-bezier(.2,.7,.3,1);
+  }
+  .card:hover img{transform:scale(1.035)}
+  .card:focus-visible{
+    outline:2px solid var(--green);
+    outline-offset:3px;
+  }
+  .card.is-hidden{display:none}
+
+  .more{display:flex;justify-content:center;margin-top:30px}
+  .btn-more{
+    padding:12px 30px;
+    border-radius:999px;
+    border:1px solid var(--green);
+    background:transparent;
+    color:var(--green);
+    font-size:.9rem;
+    letter-spacing:.02em;
+    cursor:pointer;
+    transition:background .2s ease,color .2s ease;
+  }
+  .btn-more:hover{background:var(--green);color:#fff}
+  .btn-more:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
+    margin-top:26px;
+  }
+  .service{
+    background:var(--surface);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:26px 24px 28px;
+    transition:border-color .2s ease,transform .2s ease;
+  }
+  .service:hover{border-color:#CFD8CB;transform:translateY(-2px)}
+  .service-num{
+    display:block;
+    margin-bottom:14px;
+    font-family:var(--serif);
+    font-size:.82rem;
+    letter-spacing:.14em;
+    color:var(--green);
+    opacity:.55;
+  }
+  .service h3{
+    margin:0 0 10px;
+    font-size:1.04rem;
+    font-weight:600;
+    line-height:1.35;
+    color:var(--green);
+  }
+  .service p{
+    margin:0;
+    font-size:.92rem;
+    line-height:1.62;
+    color:var(--muted);
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:flex-start;
+    gap:clamp(24px,4vw,46px);
+  }
+  .portrait{
+    flex:0 0 300px;
+    max-width:300px;
+    margin:0;
+    aspect-ratio:3 / 4;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:#EAE6DE;
+    box-shadow:0 18px 40px -28px rgba(42,46,43,.5);
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover}
+  .about-text{
+    flex:1 1 440px;
+    min-width:0;
+    max-width:680px;
+  }
+  .role{
+    margin:0 0 22px;
+    font-size:.85rem;
+    letter-spacing:.05em;
+    text-transform:uppercase;
+    color:var(--muted);
+  }
+  .about-text p{margin:0 0 15px;font-size:1rem;line-height:1.72}
+  .about-text blockquote{
+    margin:0 0 20px;
+    padding:2px 0 2px 20px;
+    border-left:3px solid var(--green-soft);
+    font-family:var(--serif);
+    font-size:clamp(1.02rem,1.6vw,1.16rem);
+    line-height:1.55;
+    color:var(--green);
+  }
+  .about-text p:last-child{margin-bottom:0}
+
+  /* ---------- FOOTER ---------- */
+  .footer{
+    border-top:1px solid var(--line);
+    background:#F1EEE7;
+    padding:48px 0 42px;
+    scroll-margin-top:74px;
+  }
+  .footer-inner{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:12px;
+  }
+  .footer .brand-name{font-size:1.35rem}
+  .footer .brand-sub{font-size:.76rem;text-transform:none;letter-spacing:.04em}
+  .mail-big{
+    margin-top:6px;
+    font-family:var(--serif);
+    font-size:clamp(1.5rem,4.2vw,2.1rem);
+    line-height:1.3;
+    color:var(--green);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s ease;
+  }
+  .mail-big:hover{border-color:currentColor}
+  .copy-wrap{position:relative;display:inline-flex}
+  .btn-copy{
+    padding:8px 17px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--surface);
+    color:var(--muted);
+    font-size:.82rem;
+    cursor:pointer;
+    transition:color .2s ease,border-color .2s ease;
+  }
+  .btn-copy:hover{color:var(--green);border-color:var(--green)}
+  .btn-copy:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+  .copied{
+    position:absolute;
+    bottom:calc(100% + 9px);
+    left:50%;
+    transform:translate(-50%,6px);
+    padding:5px 11px;
+    border-radius:8px;
+    background:var(--green);
+    color:#fff;
+    font-size:.75rem;
+    white-space:nowrap;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .2s ease,transform .2s ease;
+  }
+  .copied.show{opacity:1;transform:translate(-50%,0)}
+  .copyright{
+    margin:14px 0 0;
+    font-size:.78rem;
+    color:var(--muted);
+  }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:none;
+    background:rgba(22,26,23,.95);
+  }
+  .lightbox.open{display:block}
+  .lb-stage{
+    position:absolute;
+    inset:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:clamp(14px,4vw,58px);
+    cursor:zoom-out;
+  }
+  .lb-stage img{
+    max-width:100%;
+    max-height:100%;
+    object-fit:contain;
+    border-radius:6px;
+    box-shadow:0 24px 70px rgba(0,0,0,.55);
+    cursor:default;
+  }
+  .lb-btn{
+    position:absolute;
+    z-index:2;
+    display:grid;
+    place-items:center;
+    width:46px;
+    height:46px;
+    padding:0;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.26);
+    background:rgba(255,255,255,.09);
+    color:#fff;
+    font-size:1.4rem;
+    line-height:1;
+    cursor:pointer;
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+    transition:background .2s ease;
+  }
+  .lb-btn:hover{background:rgba(255,255,255,.2)}
+  .lb-btn:focus-visible{outline:2px solid #fff;outline-offset:2px}
+  .lb-close{top:16px;right:16px;font-size:1.5rem}
+  .lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+  .lb-next{right:16px;top:50%;transform:translateY(-50%)}
+  .lb-counter{
+    position:absolute;
+    left:50%;
+    bottom:16px;
+    transform:translateX(-50%);
+    z-index:2;
+    color:rgba(255,255,255,.72);
+    font-size:.84rem;
+    letter-spacing:.08em;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:960px){
+    .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .services{grid-template-columns:1fr}
+  }
+  @media (max-width:860px){
+    .nav a:not(.mail){display:none}
+  }
+  @media (max-width:600px){
+    .gallery{grid-template-columns:1fr;gap:12px}
+    .brand-sub{display:none}
+    .nav a.mail{font-size:.78rem;padding:6px 11px}
+    .section{padding:40px 0;scroll-margin-top:66px}
+    .container{padding:0 16px}
+    .header-inner{padding:8px 16px;min-height:54px}
+    .portrait{flex:1 1 100%;max-width:100%;aspect-ratio:4 / 3}
+    .lb-prev{left:8px}
+    .lb-next{right:8px}
+    .lb-btn{width:42px;height:42px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *{transition:none !important;animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header class="header">
+  <div class="header-inner">
+    <a class="brand" href="#works" aria-label="ToGarden — на главную">
+      <span class="brand-name">ToGarden</span>
+      <span class="brand-sub">Ландшафтный дизайн • Москва и МО</span>
+    </a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#works">Работы</a>
+      <a href="#services">Услуги</a>
+      <a href="#about">Об архитекторе</a>
+      <a href="#contacts">Контакты</a>
+      <a class="mail" href="mailto:info@togarden.ru">info@togarden.ru</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- ================= РАБОТЫ ================= -->
+  <section class="section works" id="works">
+    <div class="container">
+      <p class="eyebrow">Наши работы</p>
+      <h1 class="h1">От идеи и проектирования до&nbsp;воплощения и&nbsp;совершенства</h1>
+
+      <div class="gallery" id="gallery">
+        <button class="card" type="button" aria-label="Открыть фотографию 1">
+          <img src="TG (01).jpg" alt="Работа 1 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 2">
+          <img src="TG (02).jpg" alt="Работа 2 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 3">
+          <img src="TG (03).jpg" alt="Работа 3 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 4">
+          <img src="TG (04).jpg" alt="Работа 4 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 5">
+          <img src="TG (05).jpg" alt="Работа 5 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 6">
+          <img src="TG (06).jpg" alt="Работа 6 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 7">
+          <img src="TG (07).jpg" alt="Работа 7 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 8">
+          <img src="TG (08).jpg" alt="Работа 8 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card" type="button" aria-label="Открыть фотографию 9">
+          <img src="TG (09).jpg" alt="Работа 9 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 10">
+          <img src="TG (10).jpg" alt="Работа 10 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 11">
+          <img src="TG (11).jpg" alt="Работа 11 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 12">
+          <img src="TG (12).jpg" alt="Работа 12 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 13">
+          <img src="TG (13).jpg" alt="Работа 13 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 14">
+          <img src="TG (14).jpg" alt="Работа 14 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 15">
+          <img src="TG (15).jpg" alt="Работа 15 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 16">
+          <img src="TG (16).jpg" alt="Работа 16 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 17">
+          <img src="TG (17).jpg" alt="Работа 17 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 18">
+          <img src="TG (18).jpg" alt="Работа 18 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 19">
+          <img src="TG (19).jpg" alt="Работа 19 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 20">
+          <img src="TG (20).jpg" alt="Работа 20 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 21">
+          <img src="TG (21).jpg" alt="Работа 21 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 22">
+          <img src="TG (22).jpg" alt="Работа 22 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+        <button class="card is-hidden" type="button" aria-label="Открыть фотографию 23">
+          <img src="TG (23).jpg" alt="Работа 23 — сад от ToGarden" loading="lazy" decoding="async">
+        </button>
+      </div>
+
+      <div class="more">
+        <button class="btn-more" id="showAll" type="button" aria-expanded="false" aria-controls="gallery">Показать все работы (23)</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= УСЛУГИ ================= -->
+  <section class="section" id="services">
+    <div class="container">
+      <p class="eyebrow">Услуги</p>
+      <h2 class="h2">Полный цикл работ с садом</h2>
+
+      <div class="services">
+        <article class="service">
+          <span class="service-num">01</span>
+          <h3>Ландшафтное проектирование</h3>
+          <p>Разработка концепции, генеральный план, дендроплан, схемы освещения и полива.</p>
+        </article>
+        <article class="service">
+          <span class="service-num">02</span>
+          <h3>Реализация и благоустройство</h3>
+          <p>Посадка деревьев и кустарников, устройство газонов, мощение дорожек, создание водоемов.</p>
+        </article>
+        <article class="service">
+          <span class="service-num">03</span>
+          <h3>Сервисное обслуживание</h3>
+          <p>Сезонный уход за садом, профессиональная обрезка, защита растений от вредителей и подготовка к зиме.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ОБ АРХИТЕКТОРЕ ================= -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="about">
+        <figure class="portrait">
+          <img src="architect.jpg" alt="Безматерных Юлия Юрьевна — ландшафтный архитектор" loading="lazy" decoding="async" onerror="this.parentElement.hidden=true">
+        </figure>
+
+        <div class="about-text">
+          <p class="eyebrow">Об архитекторе</p>
+          <h2 class="h2">Безматерных Юлия Юрьевна</h2>
+          <p class="role">Ландшафтный дизайн, работы и обслуживание</p>
+
+          <blockquote>«Сад в подсознании человека – это „символ земного Рая, личного и семейного, доступного каждому, кто захочет его создать“».</blockquote>
+
+          <p>Это место отдыха среди красивых видов и растений, место силы. Организовать его эстетично, удобно, по своему вкусу — значит создать для себя бесконечный ресурс жизни.</p>
+
+          <p>И я с удовольствием вам с этим помогу!</p>
+
+          <p>Меня зовут Юлия Безматерных, я профессиональный ландшафтный архитектор. Работаю с участками Москвы и Подмосковья, по всей России (и даже за ее пределами).</p>
+
+          <p>В моей работе главное — это создание индивидуального ландшафта, отвечающего желаниям и возможностям заказчика, органично сочетающегося с окружающей средой. Проектирование ландшафта это не только создание цветников, газонов и посадка деревьев. Это прежде всего грамотные решения по организации рельефа, проектирование систем дренажа, полива и освещения.</p>
+
+          <p>Я принимаю участие в ландшафтных выставках и фестивалях, считаю, что это способствует популяризации и повышению интереса к нашей отрасли, садовому дизайну и деятельности ландшафтного архитектора.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= ПОДВАЛ / КОНТАКТЫ ================= -->
+<footer class="footer" id="contacts">
+  <div class="container footer-inner">
+    <span class="brand-name">ToGarden</span>
+    <span class="brand-sub">Москва и Московская область</span>
+
+    <a class="mail-big" href="mailto:info@togarden.ru">info@togarden.ru</a>
+
+    <div class="copy-wrap">
+      <button class="btn-copy" id="copyEmail" type="button">Скопировать email</button>
+      <span class="copied" id="copied" role="status" aria-live="polite">Скопировано!</span>
+    </div>
+
+    <p class="copyright">© <span id="year">2025</span> ToGarden · Безматерных Юлия Юрьевна</p>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Просмотр фотографий" aria-hidden="true">
+  <button class="lb-btn lb-close" type="button" aria-label="Закрыть просмотр">✕</button>
+  <button class="lb-btn lb-prev" type="button" aria-label="Предыдущая фотография">‹</button>
+  <div class="lb-stage">
+    <img id="lbImg" src="" alt="">
+  </div>
+  <button class="lb-btn lb-next" type="button" aria-label="Следующая фотография">›</button>
+  <div class="lb-counter" id="lbCounter">1 / 23</div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- Галерея: «Показать все работы» ---------- */
+  var gallery     = document.getElementById('gallery');
+  var cards       = Array.prototype.slice.call(gallery.querySelectorAll('.card'));
+  var images      = cards.map(function (c) { return c.querySelector('img'); });
+  var showAllBtn  = document.getElementById('showAll');
+  var HIDDEN_FROM = 9;
+
+  showAllBtn.addEventListener('click', function () {
+    var expanded = showAllBtn.getAttribute('aria-expanded') === 'true';
+
+    cards.forEach(function (card, i) {
+      if (i >= HIDDEN_FROM) card.classList.toggle('is-hidden', expanded);
+    });
+
+    showAllBtn.setAttribute('aria-expanded', String(!expanded));
+    showAllBtn.textContent = expanded ? 'Показать все работы (23)' : 'Свернуть работы';
+
+    if (expanded) {
+      document.getElementById('works').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+
+  /* ---------- Лайтбокс ---------- */
+  var lb        = document.getElementById('lightbox');
+  var lbImg     = document.getElementById('lbImg');
+  var lbCounter = document.getElementById('lbCounter');
+  var stage     = lb.querySelector('.lb-stage');
+  var btnPrev   = lb.querySelector('.lb-prev');
+  var btnNext   = lb.querySelector('.lb-next');
+  var btnClose  = lb.querySelector('.lb-close');
+
+  var current  = 0;
+  var isOpen   = false;
+  var lastFocus = null;
+
+  function render() {
+    var img = images[current];
+    lbImg.src = img.getAttribute('src');
+    lbImg.alt = img.alt;
+    lbCounter.textContent = (current + 1) + ' / ' + images.length;
+
+    /* лёгкая предзагрузка соседних кадров */
+    [current + 1, current - 1].forEach(function (i) {
+      var n = (i + images.length) % images.length;
+      var pre = new Image();
+      pre.src = images[n].getAttribute('src');
+    });
+  }
+
+  function openLb(index) {
+    current = index;
+    lastFocus = document.activeElement;
+    render();
+    isOpen = true;
+    lb.classList.add('open');
+    lb.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    btnClose.focus();
+  }
+
+  function closeLb() {
+    isOpen = false;
+    lb.classList.remove('open');
+    lb.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    if (lastFocus && typeof lastFocus.focus === 'function') lastFocus.focus();
+  }
+
+  function go(step) {
+    current = (current + step + images.length) % images.length;
+    render();
+  }
+
+  cards.forEach(function (card, i) {
+    card.addEventListener('click', function () { openLb(i); });
+  });
+
+  btnPrev.addEventListener('click', function (e) { e.stopPropagation(); go(-1); });
+  btnNext.addEventListener('click', function (e) { e.stopPropagation(); go(1); });
+  btnClose.addEventListener('click', function (e) { e.stopPropagation(); closeLb(); });
+
+  /* клик мимо фотографии — закрыть */
+  stage.addEventListener('click', function (e) {
+    if (e.target === stage) closeLb();
+  });
+
+  /* клавиатура */
+  document.addEventListener('keydown', function (e) {
+    if (!isOpen) return;
+    if (e.key === 'Escape') { e.preventDefault(); closeLb(); }
+    else if (e.key === 'ArrowRight') { e.preventDefault(); go(1); }
+    else if (e.key === 'ArrowLeft') { e.preventDefault(); go(-1); }
+  });
+
+  /* свайпы */
+  var startX = 0, startY = 0, tracking = false;
+
+  lb.addEventListener('touchstart', function (e) {
+    if (e.touches.length !== 1) { tracking = false; return; }
+    tracking = true;
+    startX = e.touches[0].clientX;
+    startY = e.touches[0].clientY;
+  }, { passive: true });
+
+  lb.addEventListener('touchend', function (e) {
+    if (!tracking) return;
+    tracking = false;
+    var dx = e.changedTouches[0].clientX - startX;
+    var dy = e.changedTouches[0].clientY - startY;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) {
+      go(dx < 0 ? 1 : -1);
+    }
+  }, { passive: true });
+
+  /* ---------- Копирование email ---------- */
+  var EMAIL    = 'info@togarden.ru';
+  var copyBtn  = document.getElementById('copyEmail');
+  var copiedTip = document.getElementById('copied');
+
+  copyBtn.addEventListener('click', function () {
+    function done() {
+      copiedTip.classList.add('show');
+      clearTimeout(copiedTip._timer);
+      copiedTip._timer = setTimeout(function () {
+        copiedTip.classList.remove('show');
+      }, 1800);
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(EMAIL).then(done).catch(fallback);
+    } else {
+      fallback();
+    }
+
+    function fallback() {
+      var ta = document.createElement('textarea');
+      ta.value = EMAIL;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch (err) {}
+      document.body.removeChild(ta);
+      done();
+    }
+  });
+
+  /* ---------- Год ---------- */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+})();
+</script>
+</body>
+</html>
